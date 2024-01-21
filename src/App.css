@@ -1,0 +1,124 @@
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 64px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.modal * {
+  pointer-events: initial;
+}
+.darkenbg {
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 11; /* to appear on top of start menu */
+}
+
+.error {
+  color: darkred;
+  text-align: center;
+}
+.errorContainer {
+  max-height: 50vh;
+  overflow-y: scroll;
+  word-wrap: break-word;
+}
+
+.Frame {
+  margin: -5px;
+}
+
+.appWindowContents {
+  display: flex;
+  flex-direction: column;
+}
+/* fixes weird padding at bottom */
+.w98 {
+  transform: none !important;
+}
+
+.TaskBar__quick-launch {
+  display: none;
+}
+
+/* vaportrade instead of Windows 98 */
+.TaskBar__start > button + div:after {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAABkCAMAAACB+fHfAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAADNQTFRFAAAA////////////////////////////////////////////////////////////////t5XiggAAABF0Uk5TAP8wSPBgwKjYGJC+pnjuXtYvUDqzAAABTUlEQVR4nK1UC67EIAgU/1rd9v6nfWJVwKabbPJIs3EWZBigVeqfDdjvPOgbGhhmZfAyt+XyACroiaJteRzPDJIInzRhbjAvb+q8hlGFnYws31WuzEZ4t5qj9Ho40Ba87ZWqs71CU1RaACVoqBPaDqlIaBctg61R3CsU3YOgBugIdsioxzR+cd7dYNfrnINIREk9eaeILKevXGxlk1yHtGWiuE1hhyjQE6xQpFfo7dSr5sMpQ+p5J7ADIMb14BUwyPl6VJMLBavVDSdbt0Hth9y1TdTTUbPYs61mA5/zPOnuLzUrfcHHsFRo9TWVkvM98cKEVgY/XrrsA9vnozmPhb/X3JcmkgRoclGzCJ7hGzRu2OAt4g2133ljWzNL36u2VxcPNiu4GvzM1bne7e8LlWuetsxvWaqDdq2KMoHz1g+VUaWecc6JMmfqamDnPxNVB7+B5c/MAAAAAElFTkSuQmCC)
+      no-repeat bottom 3px center,
+    linear-gradient(#0000a2, #126fc2) !important;
+}
+
+.btn.StartButton {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAATCAMAAADoD95XAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAkNQTFRFAAAAAImeFsrbI9boHNzwNeT2cM3uftLxqbvm2H3P34fQ4YLOAKixBcHSMd3vIt/zGeH2H+P3I+f6AOD/AP//AAAAAGFhacnUBe3/zozT0JTWAECqAHyGQ7S+AOv/ANv/ABoaACktAkhPE2hxNGt/etDndKbUm5jSEOf509PTjaTGhX2qRoyodbXQFb/QAOHwAK//ABISABseETk+C0pQdNDmcaLSF8nV5/3/rMPqrH69/2jsM3uRS8jVfNrkAL/ZAQMDP3uDEzQ3LU1fcc/ru5fdxJbcrpvc9GPNqqjXy5fT5IPP44LPcHBwCyMlaVx7T2N/Wd72r5vfoZ7eqozP82bU32j/vajc34PO44bQAAAAjPH/msLRoorIfG+jK1dqHef7lPP8naPQhJm7UnyY9XzR5IPPY+f0pZLRk3y2QE5rWuH1mrDhk7XcbI2u44PPdfD8maTdoX3CWVF3hNbwebnlo6DSVoOgkqHT4onJ5nrM////YvH/cO/7T97rQIOLIGFocsbnfqnQqqXZ34PQ/v//ivP/WPD/ePH+U+f0VJ6nJ2VsedXtYq3PhqPSorDe////j/L/6G7LRu//g/H9ABodACMmIVxsBez/jarTrajbKMLayJ3d617HABkcACAjL1lsjuHztff8xJbdAAAAABocFGlxdq7Yy5/gACIiBXmCC2Bo6XbPxZ/gAAgIASMmB2FodKbTyJfdABocACIlAj5DUnCJjZa7ABwdAB4hAC4zAj9FMlZ1ABcXABkbAB0gACwspZWdzQAAAMF0Uk5TAAISIS5Jj4imYl8BBAwtNjQqGgQBAQY1/2UjAQogBgEFEEd1/92OGQIMfanA/y4EAQQPS3/cjQcJV5//xoRSAgM2TrKgl5KV251zWhUCEFi92JmSkP7/kF5P/wYVmKbccS1asNOrWySMndZzdWG3GSh2oM66nYvHqak2AkpSU4y5uK6aGgYKTlJRgp7Xu4heBDEmVGEUPN3/+YgGbwIMJ9dVBk0DDpWpagh/uF91BDOYtqATNYixvAoeVE5ABQ8MB/Xac0QAAAFzSURBVHicY2BgZGJmYWVj5+Dk4ubh5eMXEBQSFmEgAETFxCXAQFJKWkYWzJKTJ6RJQVFJWUVCQlVNXUNTS1tHQkJXT9+AkCZDI2MToCZTM3MLSytrGwldWzt7QnoYRB0cnZyBulxc3dw9rK0ldD29vH0I6vL18w8AagoMCg4JDbO21g2PiAQJRwEBbk3RMbFx8UBdCYlJySlAXalpED0IjATg3PSMzCygpuyc3Lwwa11r63xkWVyaCgqLioGaSkrLysOsKyqrqlE1RcGcCiLgbq6pratvAOpqbAJa1NzS2gZTHYVqI4pr2zs6u7qBmnp6w6z7+idMnITsFqjOKHRNDJOnTJ02XUVixkwJ3Vmz58xlQNcExejhMm/+AhVQAtJduGgxVg3YNC1ZugykSXc5wwqENRAFsICIYkDxIxCIrly1GqhLl2HNWgaigei69RuAmjYybCJeD1DX5i1bt20nRQcI7Ni5a/ceUjWJ7t23/wCxigFbuHdRGFelYAAAAABJRU5ErkJggg==) !important;
+}
+
+.TaskBar__start > button + div {
+  bottom: 28px !important;
+  left: 7px !important;
+}
+
+.flashing {
+  animation: blink 2s step-start infinite;
+}
+
+@keyframes blink {
+  0% {
+    background-color: #0000a2;
+    color: white;
+  }
+  50% {
+    background-color: unset;
+    color: black;
+  }
+  100% {
+    background-color: #0000a2;
+    color: white;
+  }
+}
+
+::-webkit-scrollbar-button:vertical:start:increment,
+::-webkit-scrollbar-button:vertical:end:decrement {
+  display: none;
+}
+
+.tradeWindow {
+  max-width: calc(100vw - 24px);
+  max-height: calc(100vh - 48px);
+  transform: translateY(-12px);
+}
+
+.canDrop {
+  background-color: rgba(0, 0, 170, 0.3);
+  background-blend-mode: overlay;
+}
+
+.isHovering {
+  background-color: rgba(0, 0, 170, 0.7);
+}
+
+.StandardMenu.css div:active,
+.StandardMenu.css div .active {
+  display: block !important;
+}
+
+.unverifiedIcon {
+  filter: grayscale(60%);
+}
+
+.unverifiedIcon .icon__text {
+  color: gray;
+}

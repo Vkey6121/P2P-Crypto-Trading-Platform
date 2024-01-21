@@ -1,0 +1,101 @@
+.itemSections {
+  display: flex;
+  height: calc(90vh - 128px);
+}
+
+.itemSections .DetailsSection {
+  flex: 1;
+}
+
+.offers {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.itemSections .DetailsSection.acceptOffer {
+  flex: 0;
+}
+.itemSections .DetailsSection.acceptOffer .DetailsSection__title {
+  left: 0;
+  right: 0;
+  background: transparent;
+  text-align: center;
+  padding: 0;
+}
+
+.acceptOfferContents {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 0.85em;
+  padding: 4px 0;
+}
+
+.Checkbox input[type="checkbox"] + label {
+  width: 100%;
+  display: inline-block;
+}
+
+.successfulTradeBox {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.successfulTradeBox .tradeOffer {
+  flex-grow: 1;
+}
+.successfulTrade {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.successfulTradeIcon {
+  padding: 8px;
+  width: 32px;
+  height: 32px;
+}
+
+.oneSide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.successLabel {
+  padding: 4px;
+}
+
+.successfulTitle {
+  padding: 16px 0;
+  font-size: 200%;
+}
+
+.softWarning {
+  color: #6e3a00;
+}
+
+.softWarning p {
+  margin: 4px;
+}
+
+.successWalletButton {
+  margin-top: 10px;
+  padding: 4px !important;
+}
+
+.acceptOfferText {
+  background-color: #bbc3c4;
+}
+
+.refreshButton div {
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+}
+.refreshButton img {
+  padding-right: 4px;
+}

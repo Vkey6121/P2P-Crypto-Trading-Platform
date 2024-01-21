@@ -1,0 +1,43 @@
+.Window.pickAmount {
+  max-width: 100vw;
+}
+
+.pickAmountContentsContainer {
+  display: flex;
+  align-items: center;
+}
+
+.pickAmountInput {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.pickAmountInput > * {
+  margin: 16px;
+}
+
+.pickAmountButtons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 16px;
+}
+
+.pickAmountExtraButtons {
+  display: flex;
+  flex-direction: column;
+}
+
+.pickAmountExtraButtons button {
+  margin: 0 16px;
+  flex: 0;
+}
+
+.pickAmountExtraButtons button.btn.ButtonForm:active:focus,
+.pickAmountExtraButtons button.btn.ButtonForm:active,
+.pickAmountExtraButtons button.btn.ButtonForm.active,
+.pickAmountExtraButtons button.btn.ButtonForm.clicked {
+  padding: 5px 1px;
+}
